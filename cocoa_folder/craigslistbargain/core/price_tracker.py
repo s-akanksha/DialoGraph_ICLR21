@@ -2,7 +2,8 @@ import math
 import re
 from collections import defaultdict
 from itertools import chain
-
+import sys
+sys.path.insert(0, '/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21/')
 from cocoa_folder.cocoa.core.entity import Entity, CanonicalEntity
 from cocoa_folder.cocoa.core.util import read_json, write_pickle, read_pickle
 

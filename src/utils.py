@@ -85,9 +85,14 @@ def get_conv(data, split = False):
     
 def getRatio(datapoint):
     '''Takes datapoint and returns ratio. Return None if datapoint not accepted'''
-    buyer_amt = datapoint['outcome']['buyer_start_amt']
-    seller_amt = datapoint['outcome']['seller_suggested_amt']
-    final_amt = datapoint['outcome']['accepted_amt']
+    buyer_amt = datapoint['scenario']['kbs'][0]['personal']['Target']
+    seller_amt = datapoint['scenario']['kbs'][1]['personal']['Target']
+    final_amt = -1
+    if("offer" in datapoint['outcome']):
+        if(datapoint['outcome']['offer'] == None):
+            final_amt = -1
+        else:
+            final_amt = datapoint['outcome']['offer']['price']
     if final_amt == -1:
         return -99999
     if buyer_amt == -1:

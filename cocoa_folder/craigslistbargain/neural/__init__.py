@@ -1,6 +1,7 @@
-import onmt
+
 
 def get_data_generator(args, model_args, schema, test=False):
+    from cocoa.cragslistbargain import onmt
     from cocoa.core.scenario_db import ScenarioDB
     from cocoa.core.dataset import read_dataset
     from cocoa.core.util import read_json

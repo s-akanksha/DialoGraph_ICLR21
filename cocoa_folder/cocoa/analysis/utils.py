@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0,  "/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21/cocoa_folder/cocoa")
 from core.tokenizer import tokenize
 from collections import defaultdict
 import random

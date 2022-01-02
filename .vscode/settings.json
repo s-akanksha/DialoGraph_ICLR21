@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/yiheng_findfeatures",
+        "./cocoa_folder/craigslistbargain"
+    ]
+}

@@ -1,9 +1,10 @@
 import argparse
 import copy
 import os
-fpath = os.path.dirname(os.path.abspath(__file__))
+curr_file_path = os.path.dirname(os.path.abspath(__file__)) + '/'
 import sys
-sys.path.append(fpath)
+#sys.path.append(fpath)
+sys.path.insert(0,  "/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21")
 #sys.path.append(fpath + '/..')
 from cocoa_folder.cocoa.core.dataset import read_examples
 from cocoa_folder.cocoa.model.manager import Manager

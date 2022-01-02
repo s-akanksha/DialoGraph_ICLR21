@@ -33,9 +33,9 @@ from bert_score import BERTScorer
 from nltk.translate.bleu_score import sentence_bleu, corpus_bleu, SmoothingFunction
 #sys.path.insert(0, "/projects/tir1/users/rjoshi2/negotiation/yiheng_negotiation/evaluation/findfeatures/")
 sys.path.insert(0, curr_file_path + "yiheng_findfeatures/")
-sys.path.insert(0, curr_file_path + '../cocoa_folder/craigslistbargain/')
-
-from dialog_acts_extractor import *
+sys.path.insert(0, curr_file_path + "cocoa_folder/craigslistbargain/")
+sys.path.insert(0, "/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21/cocoa_folder/craigslistbargain")
+from yiheng_findfeatures.dialog_acts_extractor import *
 from parse_dialogue import *
 from cocoa_folder.cocoa.core.dataset import Example
 
@@ -471,9 +471,9 @@ class Main():
 		else                    : return torch.optim.SGD(parameters,  lr=self.p.lr, weight_decay=self.p.l2)
 
 	def add_model(self):
-		if	self.p.model.lower() == 'basic':		model = BasicModel(self.p, self.strat_feature_weights, self.da_feature_weights, self.embedding)
-		else:   raise NotImplementedError
-
+		#if	self.p.model.lower() == 'basic':		model = BasicModel(self.p, self.strat_feature_weights, self.da_feature_weights, self.embedding)
+		#else:   raise NotImplementedError
+		model = BasicModel(self.p, self.strat_feature_weights, self.da_feature_weights, self.embedding)
 		model = model.to(self.device)
 		if len(self.gpu_list) > 1:
 			print ('Using multiple GPUs ', self.p.gpu)

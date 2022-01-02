@@ -5,16 +5,18 @@ from sklearn.model_selection import cross_val_score
 import random
 import numpy as np
 #import liwc_result_parser
+import nltk
+nltk.download('stopwords')
 import re
 from sklearn.svm import LinearSVC
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 #import sentiment_from_liu
-import read_dominance_arousal_valence
+from . import read_dominance_arousal_valence
 from nltk.util import ngrams
 from nltk import pos_tag
-import LIWC_Mapping
+from . import LIWC_Mapping
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import RandomForestClassifier
 import math

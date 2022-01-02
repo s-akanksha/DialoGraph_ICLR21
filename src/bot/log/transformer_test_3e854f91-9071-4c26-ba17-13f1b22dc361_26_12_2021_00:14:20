@@ -1,0 +1,122 @@
+2021-12-26 00:14:20,396 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - {'dataset': '/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21/src/preproc/.ipynb_checkpoints/data_w_strategies.pkl', 'gpu': '1', 'num_workers': 8, 'model': 'transformer', 'gru_hidden_dim': 300, 'fc1_weights': 16, 'dropout': 0.5, 'rec_dropout': 0.5, 'noweights': False, 'use_clusters': False, 'cluster_embed_dim': 64, 'num_clusters': 40, 'debug': False, 'agent': 'all', 'utt_enc_hidden': 300, 'utt_drop': 0.3, 'dial_enc_hidden': 300, 'decoder_hidden': 300, 'decoder_drop': 0.1, 'use_bert': False, 'fix_bert': False, 'strat_model': 'none', 'strat_hidden': 300, 'strat_wfst_path': '../../../data/negotiation_data/data/seq_end_strats_rjyiheng_train_rjyiheng.wfst', 'da_wfst_path': '../../../data/negotiation_data/data/seq_da_acts_rjyiheng_train_rjyiheng.wfst', 'node_feats': 768, 'ratio': 0.8, 'graph_hidden': 64, 'graph_layers': 3, 'graph_drop': 0.0, 'num_heads': 1, 'undirected': False, 'self_loops': False, 'node_embed': False, 'graph_model': 'gat', 'fivetimesloss': False, 'no_strat_graph': False, 'no_da_graph': False, 'lr': 0.0001, 'l2': 0.001, 'alpha': 1, 'beta': 0, 'max_epochs': 500, 'max_num_utt': 64, 'attn': 'dot', 'restore': False, 'restore_opt': False, 'retrain': False, 'only_eval': False, 'only_test': False, 'only_chat': False, 'opt': 'adam', 'target': 'strat_f1_macro', 'early_stop': 5, 'log_db': 'negotiation', 'eps': 1e-08, 'name': 'transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20', 'seed': 1234, 'log_freq': 10, 'log_dir': './log/', 'config_dir': './config/', 'model_dir': './save_model/'}
+2021-12-26 00:14:21,555 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - 
+Dataset size -- Train: 4828, Valid: 561, Test:567
+2021-12-26 00:14:21,735 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-26 00:14:23,030 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-config.json HTTP/1.1" 200 0
+2021-12-26 00:14:23,045 - transformers.configuration_utils - [INFO] - loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json from cache at /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-26 00:14:23,046 - transformers.configuration_utils - [INFO] - Model config RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "type_vocab_size": 1,
+  "vocab_size": 50265
+}
+
+2021-12-26 00:14:23,049 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-26 00:14:24,123 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-vocab.json HTTP/1.1" 200 0
+2021-12-26 00:14:24,128 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-26 00:14:25,254 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-merges.txt HTTP/1.1" 200 0
+2021-12-26 00:14:25,257 - transformers.tokenization_utils_base - [INFO] - loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json from cache at /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+2021-12-26 00:14:25,257 - transformers.tokenization_utils_base - [INFO] - loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt from cache at /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+2021-12-26 00:14:25,340 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-26 00:14:26,457 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-config.json HTTP/1.1" 200 0
+2021-12-26 00:14:26,460 - transformers.configuration_utils - [INFO] - loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json from cache at /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-26 00:14:26,461 - transformers.configuration_utils - [INFO] - Model config RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "type_vocab_size": 1,
+  "vocab_size": 50265
+}
+
+2021-12-26 00:14:26,463 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): cdn.huggingface.co:443
+2021-12-26 00:14:26,869 - urllib3.connectionpool - [DEBUG] - https://cdn.huggingface.co:443 "HEAD /roberta-large-pytorch_model.bin HTTP/1.1" 200 0
+2021-12-26 00:14:26,871 - transformers.modeling_utils - [INFO] - loading weights file https://cdn.huggingface.co/roberta-large-pytorch_model.bin from cache at /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536
+2021-12-26 00:14:35,999 - transformers.modeling_utils - [INFO] - All model checkpoint weights were used when initializing RobertaModel.
+
+2021-12-26 00:14:35,999 - transformers.modeling_utils - [INFO] - All the weights of RobertaModel were initialized from the model checkpoint at roberta-large.
+If your task is similar to the task the model of the ckeckpoint was trained on, you can already use RobertaModel for predictions without further training.
+2021-12-26 00:19:31,485 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 1.06% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.43e+02, T: BL0.0 /RB0.2633 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:23:49,838 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 2.07% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.4e+02, T: BL0.0 /RB0.2192 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:27:57,057 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 3.17% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.37e+02, T: BL0.0 /RB0.2706 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:32:05,910 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 4.2% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.36e+02, T: BL0.0 /RB0.2621 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:34:37,855 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 5.34% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.32e+02, T: BL0.0 /RB0.2545 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:37:45,794 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 6.46% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.28e+02, T: BL0.0 /RB0.2365 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:40:11,702 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 7.46% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.25e+02, T: BL0.0 /RB0.227 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:43:25,776 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 8.53% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.22e+02, T: BL0.0 /RB0.2232 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:46:09,735 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 9.65% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.19e+02, T: BL0.0 /RB0.2246 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:48:47,285 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 10.8% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.16e+02, T: BL0.0 /RB0.2286 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:51:28,928 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 12.0% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.14e+02, T: BL0.0 /RB0.2266 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:53:54,117 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 13.0% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.13e+02, T: BL0.0 /RB0.2298 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:56:24,614 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 14.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.11e+02, T: BL0.0 /RB0.2364 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 00:59:15,276 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 15.3% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.1e+02, T: BL0.0 /RB0.2479 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:01:42,424 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 16.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.08e+02, T: BL0.0 /RB0.2543 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:04:16,102 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 17.5% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.07e+02, T: BL0.0 /RB0.2583 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:06:43,375 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 18.6% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.06e+02, T: BL0.0 /RB0.2628 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:09:31,548 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 19.7% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.05e+02, T: BL0.0 /RB0.2708 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:12:11,248 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 20.9% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.04e+02, T: BL0.0 /RB0.2718 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:15:22,298 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 22.0% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.04e+02, T: BL0.0 /RB0.2752 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:18:10,523 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 23.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.03e+02, T: BL0.0 /RB0.2791 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:21:14,635 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 24.2% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.03e+02, T: BL0.0 /RB0.2824 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:23:57,516 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 25.3% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.02e+02, T: BL0.0 /RB0.2819 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:26:41,104 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 26.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.02e+02, T: BL0.0 /RB0.2839 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:29:22,916 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 27.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.01e+02, T: BL0.0 /RB0.2855 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:31:54,934 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 28.5% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1.01e+02, T: BL0.0 /RB0.281 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:34:18,918 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 29.6% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 1e+02, T: BL0.0 /RB0.2813 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:37:03,766 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 30.7% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 99.8, T: BL0.0 /RB0.283 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:39:52,238 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 31.7% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 99.4, T: BL0.0 /RB0.2803 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:42:06,602 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 32.9% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 99.0, T: BL0.0 /RB0.2825 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:44:49,849 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 34.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 98.6, T: BL0.0 /RB0.2851 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:47:44,986 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 35.3% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 98.1, T: BL0.0 /RB0.2879 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:50:28,626 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 36.3% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 97.6, T: BL0.0 /RB0.2877 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:53:05,763 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 37.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 97.4, T: BL0.0 /RB0.2874 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:55:37,192 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 38.5% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 97.2, T: BL0.0 /RB0.2865 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 01:58:05,136 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 39.5% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 96.9, T: BL0.0 /RB0.2858 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:00:49,280 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 40.8% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 96.6, T: BL0.0 /RB0.2887 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:03:22,030 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 41.8% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 96.3, T: BL0.0 /RB0.2881 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:05:49,317 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 42.9% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 96.0, T: BL0.0 /RB0.2892 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:09:23,954 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 43.9% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.8, T: BL0.0 /RB0.2904 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:12:45,937 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 45.2% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.7, T: BL0.0 /RB0.2905 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:15:32,275 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 46.3% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.6, T: BL0.0 /RB0.2896 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:18:52,469 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 47.5% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.4, T: BL0.0 /RB0.2896 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:22:37,304 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 48.7% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.3, T: BL0.0 /RB0.2913 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:26:30,653 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 49.8% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.2, T: BL0.0 /RB0.2906 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:30:05,447 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 50.8% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 95.1, T: BL0.0 /RB0.291 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:33:17,517 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 51.9% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 94.8, T: BL0.0 /RB0.2905 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:36:27,535 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 53.0% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 94.7, T: BL0.0 /RB0.2884 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:39:34,634 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 54.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 94.5, T: BL0.0 /RB0.2894 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:43:15,272 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 55.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 94.5, T: BL0.0 /RB0.2888 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:46:56,449 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 56.1% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 94.2, T: BL0.0 /RB0.2884 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:50:11,950 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 57.2% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 93.9, T: BL0.0 /RB0.2904 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:53:28,714 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 58.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 93.7, T: BL0.0 /RB0.2909 /S0.0 /DA0.0, B-V:0.0, B-T:0.0
+2021-12-26 02:56:22,946 - transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 - [INFO] - [E: 0] | 59.4% | transformer_test_3e854f91-9071-4c26-ba17-13f1b22dc361_26_12_2021_00:14:20 | L: 93.4, T: BL0.0 /RB0.2898 /S0.0 /DA0.0, B-V:0.0, B-T:0.0

@@ -1,0 +1,100 @@
+2021-12-25 23:50:42,525 - transformer_test_f080e154-cd8e-410f-ae33-04d90b0f7a67_25_12_2021_23:50:42 - [INFO] - {'dataset': '/home/blue_bird/Coding/Dialograph/DialoGraph_ICLR21/src/preproc/.ipynb_checkpoints/data_w_strategies.pkl', 'gpu': '1', 'num_workers': 8, 'model': 'transformer', 'gru_hidden_dim': 300, 'fc1_weights': 16, 'dropout': 0.5, 'rec_dropout': 0.5, 'noweights': False, 'use_clusters': False, 'cluster_embed_dim': 64, 'num_clusters': 40, 'debug': False, 'agent': 'all', 'utt_enc_hidden': 300, 'utt_drop': 0.3, 'dial_enc_hidden': 300, 'decoder_hidden': 300, 'decoder_drop': 0.1, 'use_bert': False, 'fix_bert': False, 'strat_model': 'none', 'strat_hidden': 300, 'strat_wfst_path': '../../../data/negotiation_data/data/seq_end_strats_rjyiheng_train_rjyiheng.wfst', 'da_wfst_path': '../../../data/negotiation_data/data/seq_da_acts_rjyiheng_train_rjyiheng.wfst', 'node_feats': 768, 'ratio': 0.8, 'graph_hidden': 64, 'graph_layers': 3, 'graph_drop': 0.0, 'num_heads': 1, 'undirected': False, 'self_loops': False, 'node_embed': False, 'graph_model': 'gat', 'fivetimesloss': False, 'no_strat_graph': False, 'no_da_graph': False, 'lr': 0.0001, 'l2': 0.001, 'alpha': 1, 'beta': 0, 'max_epochs': 500, 'max_num_utt': 64, 'attn': 'dot', 'restore': False, 'restore_opt': False, 'retrain': False, 'only_eval': False, 'only_test': False, 'only_chat': False, 'opt': 'adam', 'target': 'strat_f1_macro', 'early_stop': 5, 'log_db': 'negotiation', 'eps': 1e-08, 'name': 'transformer_test_f080e154-cd8e-410f-ae33-04d90b0f7a67_25_12_2021_23:50:42', 'seed': 1234, 'log_freq': 10, 'log_dir': './log/', 'config_dir': './config/', 'model_dir': './save_model/'}
+2021-12-25 23:50:44,187 - transformer_test_f080e154-cd8e-410f-ae33-04d90b0f7a67_25_12_2021_23:50:42 - [INFO] - 
+Dataset size -- Train: 4828, Valid: 561, Test:567
+2021-12-25 23:50:44,373 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:45,396 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-config.json HTTP/1.1" 200 0
+2021-12-25 23:50:45,399 - filelock - [DEBUG] - Attempting to acquire lock 139818919254416 on /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748.lock
+2021-12-25 23:50:45,401 - filelock - [INFO] - Lock 139818919254416 acquired on /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748.lock
+2021-12-25 23:50:45,401 - transformers.file_utils - [INFO] - https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json not found in cache or force_download set to True, downloading to /home/blue_bird/.cache/torch/transformers/tmpsvg5cym7
+2021-12-25 23:50:45,404 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:46,507 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "GET /models.huggingface.co/bert/roberta-large-config.json HTTP/1.1" 200 482
+2021-12-25 23:50:46,514 - transformers.file_utils - [INFO] - storing https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json in cache at /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-25 23:50:46,514 - transformers.file_utils - [INFO] - creating metadata file for /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-25 23:50:46,515 - filelock - [DEBUG] - Attempting to release lock 139818919254416 on /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748.lock
+2021-12-25 23:50:46,516 - filelock - [INFO] - Lock 139818919254416 released on /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748.lock
+2021-12-25 23:50:46,516 - transformers.configuration_utils - [INFO] - loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json from cache at /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-25 23:50:46,517 - transformers.configuration_utils - [INFO] - Model config RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "type_vocab_size": 1,
+  "vocab_size": 50265
+}
+
+2021-12-25 23:50:46,520 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:47,527 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-vocab.json HTTP/1.1" 200 0
+2021-12-25 23:50:47,530 - filelock - [DEBUG] - Attempting to acquire lock 139818919054672 on /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b.lock
+2021-12-25 23:50:47,531 - filelock - [INFO] - Lock 139818919054672 acquired on /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b.lock
+2021-12-25 23:50:47,531 - transformers.file_utils - [INFO] - https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json not found in cache or force_download set to True, downloading to /home/blue_bird/.cache/torch/transformers/tmppgf5dcv9
+2021-12-25 23:50:47,535 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:48,552 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "GET /models.huggingface.co/bert/roberta-large-vocab.json HTTP/1.1" 200 898823
+2021-12-25 23:50:49,880 - transformers.file_utils - [INFO] - storing https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json in cache at /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+2021-12-25 23:50:49,881 - transformers.file_utils - [INFO] - creating metadata file for /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+2021-12-25 23:50:49,881 - filelock - [DEBUG] - Attempting to release lock 139818919054672 on /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b.lock
+2021-12-25 23:50:49,881 - filelock - [INFO] - Lock 139818919054672 released on /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b.lock
+2021-12-25 23:50:49,886 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:50,945 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-merges.txt HTTP/1.1" 200 0
+2021-12-25 23:50:50,947 - filelock - [DEBUG] - Attempting to acquire lock 139818948518352 on /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
+2021-12-25 23:50:50,949 - filelock - [INFO] - Lock 139818948518352 acquired on /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
+2021-12-25 23:50:50,949 - transformers.file_utils - [INFO] - https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt not found in cache or force_download set to True, downloading to /home/blue_bird/.cache/torch/transformers/tmpxusblnj5
+2021-12-25 23:50:50,953 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:51,939 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "GET /models.huggingface.co/bert/roberta-large-merges.txt HTTP/1.1" 200 456318
+2021-12-25 23:50:52,913 - transformers.file_utils - [INFO] - storing https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt in cache at /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+2021-12-25 23:50:52,913 - transformers.file_utils - [INFO] - creating metadata file for /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+2021-12-25 23:50:52,914 - filelock - [DEBUG] - Attempting to release lock 139818948518352 on /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
+2021-12-25 23:50:52,914 - filelock - [INFO] - Lock 139818948518352 released on /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
+2021-12-25 23:50:52,914 - transformers.tokenization_utils_base - [INFO] - loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-vocab.json from cache at /home/blue_bird/.cache/torch/transformers/1ae1f5b6e2b22b25ccc04c000bb79ca847aa226d0761536b011cf7e5868f0655.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+2021-12-25 23:50:52,914 - transformers.tokenization_utils_base - [INFO] - loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-merges.txt from cache at /home/blue_bird/.cache/torch/transformers/f8f83199a6270d582d6245dc100e99c4155de81c9745c6248077018fe01abcfb.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+2021-12-25 23:50:53,017 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2021-12-25 23:50:53,971 - urllib3.connectionpool - [DEBUG] - https://s3.amazonaws.com:443 "HEAD /models.huggingface.co/bert/roberta-large-config.json HTTP/1.1" 200 0
+2021-12-25 23:50:53,974 - transformers.configuration_utils - [INFO] - loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-large-config.json from cache at /home/blue_bird/.cache/torch/transformers/c22e0b5bbb7c0cb93a87a2ae01263ae715b4c18d692b1740ce72cacaa99ad184.2d28da311092e99a05f9ee17520204614d60b0bfdb32f8a75644df7737b6a748
+2021-12-25 23:50:53,975 - transformers.configuration_utils - [INFO] - Model config RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "type_vocab_size": 1,
+  "vocab_size": 50265
+}
+
+2021-12-25 23:50:53,979 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): cdn.huggingface.co:443
+2021-12-25 23:50:54,272 - urllib3.connectionpool - [DEBUG] - https://cdn.huggingface.co:443 "HEAD /roberta-large-pytorch_model.bin HTTP/1.1" 200 0
+2021-12-25 23:50:54,275 - filelock - [DEBUG] - Attempting to acquire lock 139818646494160 on /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536.lock
+2021-12-25 23:50:54,276 - filelock - [INFO] - Lock 139818646494160 acquired on /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536.lock
+2021-12-25 23:50:54,276 - transformers.file_utils - [INFO] - https://cdn.huggingface.co/roberta-large-pytorch_model.bin not found in cache or force_download set to True, downloading to /home/blue_bird/.cache/torch/transformers/tmptlvdabfx
+2021-12-25 23:50:54,280 - urllib3.connectionpool - [DEBUG] - Starting new HTTPS connection (1): cdn.huggingface.co:443
+2021-12-25 23:50:55,297 - urllib3.connectionpool - [DEBUG] - https://cdn.huggingface.co:443 "GET /roberta-large-pytorch_model.bin HTTP/1.1" 200 1425941629
+2021-12-26 00:10:55,653 - transformers.file_utils - [INFO] - storing https://cdn.huggingface.co/roberta-large-pytorch_model.bin in cache at /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536
+2021-12-26 00:10:55,664 - transformers.file_utils - [INFO] - creating metadata file for /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536
+2021-12-26 00:10:55,664 - filelock - [DEBUG] - Attempting to release lock 139818646494160 on /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536.lock
+2021-12-26 00:10:55,664 - filelock - [INFO] - Lock 139818646494160 released on /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536.lock
+2021-12-26 00:10:55,664 - transformers.modeling_utils - [INFO] - loading weights file https://cdn.huggingface.co/roberta-large-pytorch_model.bin from cache at /home/blue_bird/.cache/torch/transformers/2339ac1858323405dffff5156947669fed6f63a0c34cfab35bda4f78791893d2.fc7abf72755ecc4a75d0d336a93c1c63358d2334f5998ed326f3b0da380bf536

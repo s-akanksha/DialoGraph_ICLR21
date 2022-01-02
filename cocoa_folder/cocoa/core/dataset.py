@@ -35,7 +35,7 @@ class Example(object):
             print ('WARNING: scenario should be provided in the example')
             scenario = scenario_db.get(raw['scenario_uuid'])
         else:
-            raise ValueError('No scenario')
+            return
         uuid = raw['scenario_uuid']
         events = [Event.from_dict(e) for e in raw['events']]
         outcome = raw['outcome']
